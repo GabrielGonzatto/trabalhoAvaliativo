@@ -28,34 +28,34 @@ INSERT INTO mecanico (idMecanico, salario) VALUES (11, 2500.00);
 INSERT INTO mecanico (idMecanico, salario) VALUES (12, 2500.00);
 
 -- INSERT ORDEM DE SERVIÇO --
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca1', 'Modelo1', 'Tipo1', 'Problema1', 'Aberta', 1, 9, 2023, 1, NULL);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca2', 'Modelo2', 'Tipo2', 'Problema2', 'Em andamento', 2, 9, 2023, 2, 11);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca3', 'Modelo3', 'Tipo3', 'Problema3', 'Fechada', 3, 9, 2023, 3, 12);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca4', 'Modelo4', 'Tipo4', 'Problema4', 'Aberta', 4, 9, 2023, 4, NULL);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca5', 'Modelo5', 'Tipo5', 'Problema5', 'Em andamento', 5, 9, 2023, 5, 11);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca6', 'Modelo6', 'Tipo6', 'Problema6', 'Fechada', 6, 9, 2023, 6, 12);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca7', 'Modelo7', 'Tipo7', 'Problema7', 'Aberta', 7, 9, 2023, 7, NULL);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca8', 'Modelo8', 'Tipo8', 'Problema8', 'Em andamento', 8, 9, 2023, 8, 11);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca9', 'Modelo9', 'Tipo9', 'Problema9', 'Fechada', 9, 9, 2023, 9, 12);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca10','Modelo10','Tipo10','Problema10' ,'Aberta', 10, 9, 2023, 10, NULL);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca11','Modelo11','Tipo11','Problema11' ,'Em andamento', 11, 9, 2023, 1, 11);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca12','Modelo12','Tipo12','Problema12' ,'Fechada', 12, 9, 2023, 2, 12);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca13','Modelo13','Tipo13','Problema13' ,'Aberta', 13, 9, 2023, 3, NULL);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca14','Modelo14','Tipo14','Problema14' ,'Em andamento', 14, 9, 2023, 4, 11);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca15','Modelo15','Tipo15','Problema15' ,'Fechada', 15, 9, 2023, 5, 12);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca16','Modelo16','Tipo16','Problema16' ,'Aberta', 16, 9, 2023, 6, NULL);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca17','Modelo17','Tipo17','Problema17' ,'Em andamento', 17, 9, 2023, 7, 11);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca18','Modelo18','Tipo18','Problema18' ,'Fechada', 18, 9, 2023, 8, 12);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca19','Modelo19','Tipo19','Problema19' ,'Aberta', 19, 9, 2023, 9, NULL);
-INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca20','Modelo20','Tipo20','Problema20' ,'Em andamento', 20, 9, 2023, 10, 11);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca1', 'Modelo1', 'Tipo1', 'Problema1', 'Aberta', '1-9-2023', 1, NULL);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca2', 'Modelo2', 'Tipo2', 'Problema2', 'Em andamento','2-9-2023', 2, 11);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca3', 'Modelo3', 'Tipo3', 'Problema3', 'Fechada', '3-9-2023', 3, 12);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca4', 'Modelo4', 'Tipo4', 'Problema4', 'Aberta', '4-9-2023', 4, NULL);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca5', 'Modelo5', 'Tipo5', 'Problema5', 'Em andamento', '5-9-2023', 5, 11);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca6', 'Modelo6', 'Tipo6', 'Problema6', 'Fechada', '6-9-2023', 6, 12);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca7', 'Modelo7', 'Tipo7', 'Problema7', 'Aberta', '7-9-2023', 7, NULL);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca8', 'Modelo8', 'Tipo8', 'Problema8', 'Em andamento','8-9-2023', 8, 11);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca9', 'Modelo9', 'Tipo9', 'Problema9', 'Fechada', '9-9-2023', 9, 12);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca10','Modelo10','Tipo10','Problema10' ,'Aberta', '10-9-2023', 10, NULL);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca11','Modelo11','Tipo11','Problema11' ,'Em andamento', '11-9-2023', 1, 11);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca12','Modelo12','Tipo12','Problema12' ,'Fechada', '12-9-2023', 2, 12);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca13','Modelo13','Tipo13','Problema13' ,'Aberta', '13-9-2023', 3, NULL);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca14','Modelo14','Tipo14','Problema14' ,'Em andamento', '14-9-2023', 4, 11);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca15','Modelo15','Tipo15','Problema15' ,'Fechada', '15-9-2023', 5, 12);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca16','Modelo16','Tipo16','Problema16' ,'Aberta','16-9-2023', 6, NULL);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca17','Modelo17','Tipo17','Problema17' ,'Em andamento', '17-9-2023', 7, 11);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca18','Modelo18','Tipo18','Problema18' ,'Fechada', '18-9-2023', 8, 12);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca19','Modelo19','Tipo19','Problema19' ,'Aberta', '19-9-2023', 9, NULL);
+INSERT INTO ordemServico(marca, modelo, tipo, problema, status, dataEntrada, idCliente, idMecanico) VALUES ('Marca20','Modelo20','Tipo20','Problema20' ,'Em andamento', '20-9-2023', 10, 11);
 
 -- INSERT ORDEM DE SERVIÇO ENCERRADA --
-INSERT INTO ordemServicoEncerrada(dataSaida, idOrdem) VALUES (3, 9, 2023, 0.0, 12, 3);
-INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES (6, 9, 2023, 0.0, 12, 6);
-INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES (9, 9, 2023, 0.0, 12, 9);
-INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES (12, 9, 2023, 0.0, 12, 12);
-INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES (15, 9, 2023, 0.0, 12, 15);
-INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES (18, 9, 2023, 0.0, 12, 18);
+INSERT INTO ordemServicoEncerrada(dataSaida, idOrdem) VALUES ('3-9-2023', 3);
+INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES ('12-9-2023', 0.0, 12, 6);
+INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES ('13-9-2023', 0.0, 12, 9);
+INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES ('14-9-2023', 0.0, 12, 12);
+INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES ('15-9-2023', 0.0, 12, 15);
+INSERT INTO ordemServicoEncerrada(dataSaida, total, idMecanico, idOrdem) VALUES ('18-9-2023', 0.0, 12, 18);
 
 -- INSERT CUSTOS --
 INSERT INTO custos(nomeCusto, valor, idOrdemEncerrada) VALUES ('gasolina', 0.0, 1);
