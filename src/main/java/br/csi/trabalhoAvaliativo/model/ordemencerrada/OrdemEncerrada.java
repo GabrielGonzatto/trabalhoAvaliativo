@@ -1,5 +1,7 @@
 package br.csi.trabalhoAvaliativo.model.ordemencerrada;
 
+import br.csi.trabalhoAvaliativo.model.custo.Custo;
+import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,4 +27,12 @@ public class OrdemEncerrada {
     private Date dataSaida;
     @NumberFormat(pattern = "#,###.##")
     private double total;
+
+    @OneToOne
+    @JoinColumn(name = "idCusto")
+    private Custo custo;
+
+    @ManyToOne
+    @JoinColumn(name = "idMecanico")
+    private Mecanico mecanico;
 }

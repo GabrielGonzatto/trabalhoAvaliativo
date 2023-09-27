@@ -1,5 +1,7 @@
 package br.csi.trabalhoAvaliativo.model.ordemservico;
 
+import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
+import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -30,4 +32,12 @@ public class OrdemServico {
     private String status;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date dataEntrada;
+
+    @ManyToOne
+    @JoinColumn(name = "idMecanico")
+    private Mecanico mecanico;
+
+    @ManyToOne
+    @JoinColumn(name = "idCliente")
+    private Cliente cliente;
 }
