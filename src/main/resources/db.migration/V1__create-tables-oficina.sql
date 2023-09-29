@@ -43,10 +43,17 @@ CREATE TABLE ordemServicoEncerrada (
                                        FOREIGN KEY (idOrdem) REFERENCES ordemServico (idOrdem)
 );
 
+CREATE TABLE produtoCusto (
+                              idProdutoCusto serial unique primary key,
+                              nomeCusto varchar(30)
+);
+
 CREATE TABLE custos (
-                        idcustos serial unique primary key,
-                        nomeCusto varchar(30),
+                        idCustos serial unique primary key,
                         valor numeric(10,5),
                         idOrdemEncerrada int,
+                        idProdutoCusto int,
+                        FOREIGN KEY (idProdutoCusto) REFERENCES produtoCusto (idProdutoCusto),
                         FOREIGN KEY (idOrdemEncerrada) REFERENCES ordemServicoEncerrada (idOrdemEncerrada)
 );
+

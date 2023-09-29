@@ -25,7 +25,7 @@ public class OrdemEncerrada {
     private Long idOrdemEncerrada;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date dataSaida;
-    @NumberFormat(pattern = "#,###.##")
+    @NumberFormat(pattern = "#.###.##")
     private double total;
 
     @OneToOne
