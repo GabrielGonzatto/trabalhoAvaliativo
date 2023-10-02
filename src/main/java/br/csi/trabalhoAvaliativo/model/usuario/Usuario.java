@@ -9,13 +9,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
 
 @MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class Usuario {
+public abstract class Usuario implements UserDetails {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,9 +32,9 @@ public abstract class Usuario {
     @NotNull
     private String senha;
 
-    private String permissao;
+    private UserRole permissao;
 
-    /*@Override
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
@@ -63,5 +67,5 @@ public abstract class Usuario {
     @Override
     public boolean isEnabled() {
         return false;
-    }*/
+    }
 }

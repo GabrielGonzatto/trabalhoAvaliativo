@@ -2,7 +2,7 @@ package br.csi.trabalhoAvaliativo.model.usuario;
 
 public enum UserRole {
 
-    /*ADMIN("admin"),
+    ADMIN("admin"),
     USER("user");
     private String permissao;
 
@@ -12,5 +12,5 @@ public enum UserRole {
 
     public String getRole() {
         return permissao;
-    }*/
+    }
 }
