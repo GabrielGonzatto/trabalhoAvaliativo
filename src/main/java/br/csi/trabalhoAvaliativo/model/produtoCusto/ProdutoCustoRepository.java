@@ -1,4 +1,17 @@
 package br.csi.trabalhoAvaliativo.model.produtoCusto;
 
-public interface ProdutoCustoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface ProdutoCustoRepository extends JpaRepository<ProdutoCusto, Long> {
+    public ProdutoCusto getById(Long id);
+    public Optional<ProdutoCusto> findById(Long id);
+
+    /*@Query(value = "SELECT pc.idProdutoCusto as id, pc.nomeCusto as nome " +
+            "FROM produtoCusto pc WHERE a.idPodutoCusto =:id", nativeQuery = true)
+    List<ProdutoCustoDTO> findProdutoCustoByProjeto(@Param("id") int id);*/
 }
