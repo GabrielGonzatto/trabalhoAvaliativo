@@ -2,6 +2,7 @@ package br.csi.trabalhoAvaliativo.service;
 
 import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
 import br.csi.trabalhoAvaliativo.model.cliente.ClienteRepository;
+import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCusto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +24,10 @@ public class ClienteService {
     public List<Cliente> listarClientes(){
 
         return this.repository.findAll();
+    }
+
+    public Cliente findById(Long id){
+        return this.repository.findById(id).get();
     }
 
     public void editarCliente(Cliente cliente){

@@ -2,6 +2,8 @@ package br.csi.trabalhoAvaliativo.controller;
 
 import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
 import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
+import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCusto;
+import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCustoRepository;
 import br.csi.trabalhoAvaliativo.service.ClienteService;
 import br.csi.trabalhoAvaliativo.service.MecanicoService;
 import jakarta.transaction.Transactional;
@@ -26,21 +28,21 @@ public class MecanicoController {
     @PostMapping("/cadastrarMecanico")
     @Transactional
     public ResponseEntity cadastrarMecanico(@RequestBody @Valid Mecanico mecanico, UriComponentsBuilder uriBuilder) {
-
         this.service.cadastrarMecanico(mecanico);
-        //monta a URI da aplicação dinamicamente
         URI uri = uriBuilder.path("/mecanico/{id}").buildAndExpand(mecanico.getId()).toUri();
-        //created(uri) irá colocar no cabeçalho da requisição da resposta
-        // o parâmetro Location com a URI de acesso ao recurso criado
+
         return ResponseEntity.created(uri).body(mecanico);
     }
 
     @GetMapping
     @Transactional
     public ResponseEntity<List<Mecanico>> listarMecanicos(){
-
         return ResponseEntity.ok(this.service.listarMecanicos());
+    }
 
+    @GetMapping("/{id}")
+    public Mecanico mecanico(@PathVariable Long id){
+        return this.service.findById(id);
     }
 
     @PutMapping("/editarMecanico")

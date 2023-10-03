@@ -28,12 +28,11 @@ import java.util.List;
 public class Mecanico extends Usuario {
 
     @NotNull
-    @NumberFormat(pattern = "#,###.##")
     private BigDecimal salario;
 
-    @OneToMany(mappedBy = "mecanico")
+    /*@OneToMany(mappedBy = "mecanico")
     private List<OrdemServico> ordemServicos;
 
     @OneToMany(mappedBy = "mecanico")
-    private List<OrdemEncerrada> ordemEncerradas;
+    private List<OrdemEncerrada> ordemEncerradas;*/
 }

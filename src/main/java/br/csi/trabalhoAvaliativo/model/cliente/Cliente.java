@@ -26,6 +26,6 @@ public class Cliente extends Usuario {
     @NotBlank
     private String telefone;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<OrdemServico> ordemServicos;
+    /*@OneToMany(mappedBy = "cliente")
+    private List<OrdemServico> ordemServicos;*/
 }
