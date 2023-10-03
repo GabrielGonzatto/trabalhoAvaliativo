@@ -6,7 +6,7 @@ import br.csi.trabalhoAvaliativo.model.usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +19,7 @@ import java.util.List;
 
 
 @Entity
+@Table(name = "mecanico")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -31,10 +32,8 @@ public class Mecanico extends Usuario {
     private BigDecimal salario;
 
     @OneToMany(mappedBy = "mecanico")
-    @JsonIgnore
     private List<OrdemServico> ordemServicos;
 
     @OneToMany(mappedBy = "mecanico")
-    @JsonIgnore
     private List<OrdemEncerrada> ordemEncerradas;
 }

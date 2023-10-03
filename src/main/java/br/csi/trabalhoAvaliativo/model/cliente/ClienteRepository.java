@@ -1,7 +1,5 @@
 package br.csi.trabalhoAvaliativo.model.cliente;
 
-import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
-import br.csi.trabalhoAvaliativo.model.cliente.ClienteDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 

@@ -10,7 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 @Entity
-@Table(name = "ordemServico")
+@Table(name = "ordem_servico")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -34,10 +34,10 @@ public class OrdemServico {
     private Date dataEntrada;
 
     @ManyToOne
-    @JoinColumn(name = "idMecanico")
+    @JoinColumn(name = "id_mecanico")
     private Mecanico mecanico;
 
     @ManyToOne
-    @JoinColumn(name = "idCliente")
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 }

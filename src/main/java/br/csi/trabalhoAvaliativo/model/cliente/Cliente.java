@@ -5,6 +5,7 @@ import br.csi.trabalhoAvaliativo.model.usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,6 +15,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
+@Table(name = "cliente")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,6 +27,5 @@ public class Cliente extends Usuario {
     private String telefone;
 
     @OneToMany(mappedBy = "cliente")
-    @JsonIgnore
     private List<OrdemServico> ordemServicos;
 }
