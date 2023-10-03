@@ -18,7 +18,9 @@ public class Custo {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCusto;
+
     private String nomeCusto;
+
     @NumberFormat(pattern = "#,###.##")
     private double valor;
 }

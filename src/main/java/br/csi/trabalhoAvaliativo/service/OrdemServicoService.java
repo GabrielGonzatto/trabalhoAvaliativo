@@ -16,13 +16,12 @@ public class OrdemServicoService {
     private OrdemServicoRepository repository;
 
     public void cadastrarOrdem(OrdemServico ordemServico){
-        System.out.println("entrou em salvar"+ordemServico.getIdOrdem());
+        System.out.println("entrou em salvar"+ordemServico.getId());
         this.repository.save(ordemServico);
     }
-    public List<OrdemServico> lista(){
-        System.out.println("entrou em lista");
-
-        return this.repository.findAll();}
+    public List<OrdemServico> listarOrdens(){
+        return this.repository.findAll();
+    }
 
     public OrdemServico findById(Long id){
         System.out.println("entrou em find"+id);
@@ -32,7 +31,7 @@ public class OrdemServicoService {
     public void atualizar(OrdemServico ordemServico){
         System.out.println("entrou em atualizar");
 
-        OrdemServico o = this.repository.getReferenceById(ordemServico.getIdOrdem());
+        OrdemServico o = this.repository.getReferenceById(ordemServico.getId());
         o.setMarca(ordemServico.getMarca());
         o.setModelo(ordemServico.getModelo());
         o.setTipo(ordemServico.getTipo());

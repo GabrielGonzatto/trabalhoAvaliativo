@@ -21,4 +21,6 @@ public class ProdutoCusto {
     @NotBlank
     private String nome;
 
+
+
 }

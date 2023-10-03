@@ -30,9 +30,10 @@ public class Mecanico extends Usuario {
     @NotNull
     private BigDecimal salario;
 
-    /*@OneToMany(mappedBy = "mecanico")
+    @OneToMany(mappedBy = "mecanico")
+    @JsonIgnore
     private List<OrdemServico> ordemServicos;
 
-    @OneToMany(mappedBy = "mecanico")
+    /*@OneToMany(mappedBy = "mecanico")
     private List<OrdemEncerrada> ordemEncerradas;*/
 }
