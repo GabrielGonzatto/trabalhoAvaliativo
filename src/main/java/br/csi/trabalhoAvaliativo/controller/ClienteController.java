@@ -1,7 +1,7 @@
 package br.csi.trabalhoAvaliativo.controller;
 
 import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
-import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCusto;
+import br.csi.trabalhoAvaliativo.model.cliente.ClienteDTO;
 import br.csi.trabalhoAvaliativo.service.ClienteService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -36,7 +36,7 @@ public class ClienteController {
 
     @GetMapping
     @Transactional
-    public ResponseEntity<List<Cliente>> listarClientes(){
+    public ResponseEntity<List<ClienteDTO>> listarClientes(){
         return ResponseEntity.ok(this.service.listarClientes());
     }
 
@@ -45,7 +45,7 @@ public class ClienteController {
         return this.service.findById(id);
     }
 
-    @PutMapping("/editarCliente")
+    @PutMapping
     @Transactional
     public ResponseEntity editarCliente(@RequestBody Cliente cliente){
 

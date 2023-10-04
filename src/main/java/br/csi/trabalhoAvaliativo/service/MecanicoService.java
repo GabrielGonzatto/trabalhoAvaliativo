@@ -1,9 +1,8 @@
 package br.csi.trabalhoAvaliativo.service;
 
-import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
 import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
+import br.csi.trabalhoAvaliativo.model.mecanico.MecanicoDTO;
 import br.csi.trabalhoAvaliativo.model.mecanico.MecanicoRepository;
-import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCusto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,8 +21,8 @@ public class MecanicoService {
         this.repository.save(mecanico);
     }
 
-    public List<Mecanico> listarMecanicos(){
-        return this.repository.findAll();
+    public List<MecanicoDTO> listarMecanicos(){
+        return this.repository.findAllBy();
     }
 
     public Mecanico findById(Long id){

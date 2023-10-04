@@ -1,8 +1,8 @@
 package br.csi.trabalhoAvaliativo.service;
 
 import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
+import br.csi.trabalhoAvaliativo.model.cliente.ClienteDTO;
 import br.csi.trabalhoAvaliativo.model.cliente.ClienteRepository;
-import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCusto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,9 +21,9 @@ public class ClienteService {
         this.repository.save(cliente);
     }
 
-    public List<Cliente> listarClientes(){
+    public List<ClienteDTO> listarClientes(){
 
-        return this.repository.findAll();
+        return this.repository.findAllBy();
     }
 
     public Cliente findById(Long id){
