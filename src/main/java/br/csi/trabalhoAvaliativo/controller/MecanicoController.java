@@ -1,10 +1,7 @@
 package br.csi.trabalhoAvaliativo.controller;
 
-import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
 import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
-import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCusto;
-import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCustoRepository;
-import br.csi.trabalhoAvaliativo.service.ClienteService;
+import br.csi.trabalhoAvaliativo.model.mecanico.MecanicoDTO;
 import br.csi.trabalhoAvaliativo.service.MecanicoService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -36,7 +33,7 @@ public class MecanicoController {
 
     @GetMapping
     @Transactional
-    public ResponseEntity<List<Mecanico>> listarMecanicos(){
+    public ResponseEntity<List<MecanicoDTO>> listarMecanicos(){
         return ResponseEntity.ok(this.service.listarMecanicos());
     }
 

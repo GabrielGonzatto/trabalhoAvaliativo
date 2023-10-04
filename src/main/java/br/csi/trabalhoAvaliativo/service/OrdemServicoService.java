@@ -20,7 +20,7 @@ public class OrdemServicoService {
         this.repository.save(ordemServico);
     }
     public List<OrdemServico> listarOrdens(){
-        return this.repository.findAll();
+        return this.repository.findAllBy();
     }
 
     public OrdemServico findById(Long id){

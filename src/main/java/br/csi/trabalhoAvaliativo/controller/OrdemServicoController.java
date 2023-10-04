@@ -1,6 +1,6 @@
 package br.csi.trabalhoAvaliativo.controller;
 
-import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
+
 import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServico;
 import br.csi.trabalhoAvaliativo.service.OrdemServicoService;
 import jakarta.transaction.Transactional;
@@ -40,5 +40,24 @@ public class OrdemServicoController {
     public ResponseEntity<List<OrdemServico>> listarOrdens(){
         return ResponseEntity.ok(this.service.listarOrdens());
     }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity editarOrdemServico(@RequestBody OrdemServico ordemServico){
+
+        this.service.atualizar(ordemServico);
+
+        return ResponseEntity.ok(ordemServico);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity deletarOrdemServico(@PathVariable Long id){
+
+        this.service.excluir(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
 
 }
