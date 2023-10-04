@@ -1,5 +1,7 @@
 package br.csi.trabalhoAvaliativo.model.produtoCusto;
 
+import br.csi.trabalhoAvaliativo.model.custos.Custos;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -21,6 +23,8 @@ public class ProdutoCusto {
     @NotBlank
     private String nome;
 
-
+    @OneToOne(mappedBy = "produtoCusto")
+    @JsonIgnore
+    private Custos custo;
 
 }

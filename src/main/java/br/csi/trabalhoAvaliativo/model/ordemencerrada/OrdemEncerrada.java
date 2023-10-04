@@ -1,6 +1,6 @@
 package br.csi.trabalhoAvaliativo.model.ordemencerrada;
 
-import br.csi.trabalhoAvaliativo.model.custo.Custo;
+import br.csi.trabalhoAvaliativo.model.custos.Custos;
 import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,7 +30,7 @@ public class OrdemEncerrada {
 
     @OneToOne
     @JoinColumn(name = "idCusto")
-    private Custo custo;
+    private Custos custo;
 
     @ManyToOne
     @JoinColumn(name = "idMecanico")
