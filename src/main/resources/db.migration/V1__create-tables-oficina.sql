@@ -26,6 +26,9 @@ CREATE TABLE ordem_servico(
                               problema varchar(100),
                               status varchar(20),
                               data_entrada DATE,
+                              data_saida DATE,
+                              total numeric(10,5),
+                              ativo boolean,
                               id_cliente int,
                               id_mecanico int,
                               FOREIGN KEY (id_cliente) REFERENCES cliente (id),
@@ -35,18 +38,6 @@ CREATE TABLE ordem_servico(
 
 
 
-
-
-CREATE TABLE ordem_servicoencerrada (
-                                        id serial unique primary key,
-                                        data_saida DATE,
-                                        total numeric(10,5),
-                                        id_mecanico int,
-                                        id_ordem int,
-                                        FOREIGN KEY (id_mecanico) REFERENCES mecanico (id),
-                                        FOREIGN KEY (id_ordem) REFERENCES ordem_servico (id)
-);
-
 CREATE TABLE produto_custo (
                                id serial unique primary key,
                                nome varchar(30)
@@ -55,8 +46,8 @@ CREATE TABLE produto_custo (
 CREATE TABLE custos (
                         id serial unique primary key,
                         valor numeric(10,5),
-                        id_ordemencerrada int,
+                        id_ordemservico int,
                         id_produtocusto int,
                         FOREIGN KEY (id_produtocusto) REFERENCES produto_custo (id),
-                        FOREIGN KEY (id_ordemencerrada) REFERENCES ordem_servicoencerrada (id));
+                        FOREIGN KEY (id_ordemservico) REFERENCES ordem_servico (id));
 

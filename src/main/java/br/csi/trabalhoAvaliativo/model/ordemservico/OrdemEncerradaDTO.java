@@ -6,16 +6,11 @@ import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
 
 import java.util.Date;
 
-public interface OrdemServicoDTO {
+public interface OrdemEncerradaDTO {
 
-    Long getId();
-    String getMarca();
-    String getModelo();
-    String getTipo();
-    String getProblema();
-    String getStatus();
     Boolean getBoolean();
-    Date getDataEntrada();
+    OrdemEncerrada getDataSaida();
     Mecanico getMecanico();
+    Custos getCustos();
     Cliente getCliente();
 }

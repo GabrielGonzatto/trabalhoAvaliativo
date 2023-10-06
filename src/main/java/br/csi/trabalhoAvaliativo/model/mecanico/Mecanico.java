@@ -1,6 +1,5 @@
 package br.csi.trabalhoAvaliativo.model.mecanico;
 
-import br.csi.trabalhoAvaliativo.model.ordemencerrada.OrdemEncerrada;
 import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServico;
 import br.csi.trabalhoAvaliativo.model.usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -34,6 +33,5 @@ public class Mecanico extends Usuario {
     @JsonIgnore
     private List<OrdemServico> ordemServicos;
 
-    /*@OneToMany(mappedBy = "mecanico")
-    private List<OrdemEncerrada> ordemEncerradas;*/
+
 }

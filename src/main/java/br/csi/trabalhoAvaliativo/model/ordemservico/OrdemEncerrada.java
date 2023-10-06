@@ -1,4 +1,4 @@
-package br.csi.trabalhoAvaliativo.model.ordemencerrada;
+package br.csi.trabalhoAvaliativo.model.ordemservico;
 
 import br.csi.trabalhoAvaliativo.model.custos.Custos;
 import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
@@ -12,8 +12,8 @@ import org.springframework.format.annotation.NumberFormat;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "ordemEncerrada")
+@Embeddable
+@Table(name = "ordem_servico")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,18 +21,9 @@ import java.util.Date;
 
 public class OrdemEncerrada {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idOrdemEncerrada;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private Date dataSaida;
+    private Date data_saida;
     @NumberFormat(pattern = "#,###.##")
     private double total;
 
-    @OneToOne
-    @JoinColumn(name = "idCusto")
-    private Custos custo;
-
-    @ManyToOne
-    @JoinColumn(name = "idMecanico")
-    private Mecanico mecanico;
 }

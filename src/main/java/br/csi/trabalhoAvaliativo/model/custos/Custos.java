@@ -1,5 +1,6 @@
 package br.csi.trabalhoAvaliativo.model.custos;
 
+import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServico;
 import br.csi.trabalhoAvaliativo.model.produtoCusto.ProdutoCusto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -22,9 +23,18 @@ public class Custos {
     private Long id;
 
     @NumberFormat(pattern = "#,###.##")
-    private double valor;
+    private Double valor;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_produtocusto", referencedColumnName = "id")
     private ProdutoCusto produtoCusto;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "id_ordemservico", referencedColumnName = "id")
+    private OrdemServico ordemServico;
+
+    public Double getValor() {
+        return valor;
+    }
 }
+

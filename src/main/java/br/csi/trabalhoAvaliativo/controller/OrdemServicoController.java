@@ -1,7 +1,9 @@
 package br.csi.trabalhoAvaliativo.controller;
 
 
+import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemEncerradaDTO;
 import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServico;
+import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServicoDTO;
 import br.csi.trabalhoAvaliativo.service.OrdemServicoService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -41,6 +43,16 @@ public class OrdemServicoController {
         return ResponseEntity.ok(this.service.listarOrdens());
     }
 
+    @GetMapping("/ordemAtiva")
+    @Transactional
+    public ResponseEntity<List<OrdemServicoDTO>> listarOrdensAtivas(){return ResponseEntity.ok(this.service.listarOrdensAtivas());}
+
+    @GetMapping("/ordemInativa")
+    @Transactional
+    public ResponseEntity<List<OrdemEncerradaDTO>> listarOrdensInativas(){return ResponseEntity.ok(this.service.listarOrdensInativas());}
+
+
+
     @PutMapping
     @Transactional
     public ResponseEntity editarOrdemServico(@RequestBody OrdemServico ordemServico){
@@ -48,6 +60,11 @@ public class OrdemServicoController {
         this.service.atualizar(ordemServico);
 
         return ResponseEntity.ok(ordemServico);
+    }
+    @GetMapping("/{id}")
+    @Transactional
+    public OrdemServico findById(@PathVariable Long id){
+        return this.service.findById(id);
     }
 
     @DeleteMapping("/{id}")
@@ -58,6 +75,12 @@ public class OrdemServicoController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/{id}/encerrarOrdem")
+    @Transactional
+    public ResponseEntity encerrarOrdemServico(@RequestBody OrdemServico ordemServico){
+        this.service.encerrarOrdem(ordemServico);
+        return ResponseEntity.ok(ordemServico);
+    }
 
 
 }

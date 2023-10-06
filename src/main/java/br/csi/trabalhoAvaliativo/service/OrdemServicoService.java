@@ -1,7 +1,6 @@
 package br.csi.trabalhoAvaliativo.service;
 
-import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServico;
-import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServicoRepository;
+import br.csi.trabalhoAvaliativo.model.ordemservico.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +16,7 @@ public class OrdemServicoService {
 
     public void cadastrarOrdem(OrdemServico ordemServico){
         System.out.println("entrou em salvar"+ordemServico.getId());
+        ordemServico.setAtivo(true);
         this.repository.save(ordemServico);
     }
     public List<OrdemServico> listarOrdens(){
@@ -40,6 +40,20 @@ public class OrdemServicoService {
         o.setDataEntrada(ordemServico.getDataEntrada());
         o.setCliente(ordemServico.getCliente());
         o.setMecanico(ordemServico.getMecanico());
+    }
+    public void encerrarOrdem(OrdemServico ordemServico){
+        System.out.println("entrou em encerrar");
+
+        OrdemServico o = this.repository.getReferenceById(ordemServico.getId());
+        o.setAtivo(false);
+        o.calcularTotal();
+        o.setOrdemEncerrada(new OrdemEncerrada());
+    }
+    public List<OrdemServicoDTO> listarOrdensAtivas(){
+        return this.repository.findAllActive();
+    }
+    public List<OrdemEncerradaDTO> listarOrdensInativas(){
+        return this.repository.findAllInactive();
     }
     public void excluir(Long id){
         this.repository.deleteById(id);
