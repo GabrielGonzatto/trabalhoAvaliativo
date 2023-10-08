@@ -1,10 +1,7 @@
 package br.csi.trabalhoAvaliativo.model.mecanico;
 
 public interface MecanicoDTO {
-    Long getId();
+    Long getIdMecanico();
     String getNome();
     String getCpf();
-    String getLogin();
-    String getSenha();
-    String getPermissao();
     String getSalario();}

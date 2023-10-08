@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface MecanicoRepository extends JpaRepository<Mecanico, Long> {
 
-    Mecanico getById(Long id);
+    Mecanico getById(Long idMecanico);
 
-    Optional<Mecanico> findById(Long id);
+    Optional<Mecanico> findById(Long idMecanico);
 
     List<MecanicoDTO> findAllBy();
 

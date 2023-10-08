@@ -1,5 +1,6 @@
 package br.csi.trabalhoAvaliativo.service;
 
+
 import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
 import br.csi.trabalhoAvaliativo.model.cliente.ClienteDTO;
 import br.csi.trabalhoAvaliativo.model.cliente.ClienteRepository;
@@ -26,24 +27,21 @@ public class ClienteService {
         return this.repository.findAllBy();
     }
 
-    public Cliente findById(Long id){
-        return this.repository.findById(id).get();
+    public Cliente findById(Long idCliente){
+        return this.repository.findById(idCliente).get();
     }
 
     public void editarCliente(Cliente cliente){
 
-        Cliente c = this.repository.getReferenceById(cliente.getId());
+        Cliente c = this.repository.getReferenceById(Long.valueOf(cliente.getIdCliente()));
 
         c.setNome(cliente.getNome());
         c.setCpf(cliente.getCpf());
-        c.setLogin(cliente.getLogin());
-        c.setSenha(cliente.getSenha());
-        c.setPermissao(cliente.getPermissao());
         c.setTelefone(cliente.getTelefone());
     }
 
-    public void deletarCliente(Long id){
+    public void deletarCliente(Long idCliente){
 
-        this.repository.deleteById(id);
+        this.repository.deleteById(idCliente);
     }
 }

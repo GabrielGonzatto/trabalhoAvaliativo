@@ -2,11 +2,8 @@ package br.csi.trabalhoAvaliativo.model.cliente;
 
 public interface ClienteDTO {
 
-    Long getId();
+    Long getIdCliente();
     String getNome();
     String getCpf();
-    String getLogin();
-    String getSenha();
-    String getPermissao();
     String getTelefone();
 }

@@ -7,8 +7,9 @@ import java.util.Optional;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
-    Cliente getById(Long id);
-    Optional<Cliente> findById(Long id);
+    Cliente getById(Long idCliente);
+
+    Optional<Cliente> findById(Long idCliente);
     List<ClienteDTO> findAllBy();
 
 }

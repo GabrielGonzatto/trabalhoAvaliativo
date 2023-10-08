@@ -43,10 +43,9 @@ public class OrdemServicoService {
     }
     public void encerrarOrdem(OrdemServico ordemServico){
         System.out.println("entrou em encerrar");
-
         OrdemServico o = this.repository.getReferenceById(ordemServico.getId());
         o.setAtivo(false);
-        o.calcularTotal();
+        o.setMecanico(ordemServico.getMecanico());
         o.setOrdemEncerrada(new OrdemEncerrada());
     }
     public List<OrdemServicoDTO> listarOrdensAtivas(){

@@ -1,17 +1,16 @@
 package br.csi.trabalhoAvaliativo.model.mecanico;
 
+
 import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServico;
-import br.csi.trabalhoAvaliativo.model.usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.NumberFormat;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -24,8 +23,17 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Mecanico extends Usuario {
+public class Mecanico {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_mecanico")
+    private Long idMecanico;
+    @NotBlank
+    private String nome;
+    @Size(max = 14, message = "Cpf com mais de 14 caracteres")
+    private String cpf;
     @NotNull
     private BigDecimal salario;
 

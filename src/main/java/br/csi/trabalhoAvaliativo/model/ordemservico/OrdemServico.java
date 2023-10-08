@@ -1,18 +1,16 @@
 package br.csi.trabalhoAvaliativo.model.ordemservico;
 
+
 import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
-import br.csi.trabalhoAvaliativo.model.custos.Custos;
 import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.NumberFormat;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "ordem_servico")
@@ -42,11 +40,7 @@ public class OrdemServico {
     @Embedded
     private OrdemEncerrada ordemEncerrada;
 
-    @OneToMany(mappedBy = "ordemServico")
-    private List<Custos> custos;
-    public void calcularTotal() {
-        this.ordemEncerrada.setTotal(custos.stream().mapToDouble(Custos::getValor).sum());
-    }
+
     @ManyToOne
     @JoinColumn(name = "id_mecanico")
     private Mecanico mecanico;

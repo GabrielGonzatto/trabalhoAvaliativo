@@ -1,5 +1,6 @@
 package br.csi.trabalhoAvaliativo.controller;
 
+
 import br.csi.trabalhoAvaliativo.model.cliente.Cliente;
 import br.csi.trabalhoAvaliativo.model.cliente.ClienteDTO;
 import br.csi.trabalhoAvaliativo.service.ClienteService;
@@ -28,12 +29,11 @@ public class ClienteController {
 
         this.service.cadastrarCliente(cliente);
         //monta a URI da aplicação dinamicamente
-        URI uri = uriBuilder.path("/cliente/{id}").buildAndExpand(cliente.getId()).toUri();
+        URI uri = uriBuilder.path("/cliente/{id}").buildAndExpand(cliente.getIdCliente()).toUri();
         //created(uri) irá colocar no cabeçalho da requisição da resposta
         // o parâmetro Location com a URI de acesso ao recurso criado
         return ResponseEntity.created(uri).body(cliente);
     }
-
     @GetMapping
     @Transactional
     public ResponseEntity<List<ClienteDTO>> listarClientes(){

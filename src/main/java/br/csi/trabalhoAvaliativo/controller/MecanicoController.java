@@ -1,5 +1,6 @@
 package br.csi.trabalhoAvaliativo.controller;
 
+
 import br.csi.trabalhoAvaliativo.model.mecanico.Mecanico;
 import br.csi.trabalhoAvaliativo.model.mecanico.MecanicoDTO;
 import br.csi.trabalhoAvaliativo.service.MecanicoService;
@@ -26,7 +27,7 @@ public class MecanicoController {
     @Transactional
     public ResponseEntity cadastrarMecanico(@RequestBody @Valid Mecanico mecanico, UriComponentsBuilder uriBuilder) {
         this.service.cadastrarMecanico(mecanico);
-        URI uri = uriBuilder.path("/mecanico/{id}").buildAndExpand(mecanico.getId()).toUri();
+        URI uri = uriBuilder.path("/mecanico/{id}").buildAndExpand(mecanico.getIdMecanico()).toUri();
 
         return ResponseEntity.created(uri).body(mecanico);
     }

@@ -18,8 +18,8 @@ public interface OrdemServicoRepository extends JpaRepository<OrdemServico, Long
     List<OrdemServicoDTO> findAllActive();
 
     @Query(value = "SELECT o.id, o.marca, o.modelo, o.tipo, o.problema, o.status, o.data_entrada, o.data_saida, o.total, o.id_cliente, o.id_mecanico, c.nome, m.nome FROM " +
-            "ordem_servico o INNER JOIN cliente c on o.id_cliente =  c.id " +
-            "INNER JOIN mecanico m on o.id_mecanico = m.id " +
+            "ordem_servico o INNER JOIN cliente c on o.id_cliente =  c.id_cliente " +
+            "INNER JOIN mecanico m on o.id_mecanico = m.id_mecanico " +
             "where ativo is false;", nativeQuery = true)
     List<OrdemEncerradaDTO> findAllInactive();
 }

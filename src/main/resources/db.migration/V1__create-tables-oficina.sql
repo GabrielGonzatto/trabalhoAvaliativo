@@ -1,22 +1,33 @@
+
+CREATE TABLE mecanico(
+                         id_mecanico serial unique primary key,
+                         salario numeric(10,5),
+                         nome varchar(100),
+                         cpf varchar(14)
+
+);
+
 CREATE TABLE cliente(
-                        id serial unique primary key,
+                        id_cliente serial unique primary key,
+                        telefone varchar(20),
                         nome varchar(100),
-                        cpf varchar(14),
+                        cpf varchar(14)
+
+
+);
+
+CREATE TABLE usuario(
+                        id_usuario serial unique primary key,
                         login varchar(100),
                         senha varchar(100),
                         permissao varchar(20),
-                        telefone varchar(20)
+                        fk_id_cliente int,
+                        fk_id_mecanico int,
+                        FOREIGN KEY (fk_id_cliente) REFERENCES cliente (id_cliente),
+                        FOREIGN KEY (fk_id_mecanico) REFERENCES mecanico (id_mecanico)
+
 );
 
-CREATE TABLE mecanico(
-                         id serial unique primary key,
-                         nome varchar(100),
-                         cpf varchar(14),
-                         login varchar(100),
-                         senha varchar(100),
-                         permissao varchar(20),
-                         salario numeric(10,5)
-);
 
 CREATE TABLE ordem_servico(
                               id serial unique primary key,
@@ -31,8 +42,8 @@ CREATE TABLE ordem_servico(
                               ativo boolean,
                               id_cliente int,
                               id_mecanico int,
-                              FOREIGN KEY (id_cliente) REFERENCES cliente (id),
-                              FOREIGN KEY (id_mecanico) REFERENCES mecanico (id)
+                              FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente),
+                              FOREIGN KEY (id_mecanico) REFERENCES mecanico (id_mecanico)
 );
 
 

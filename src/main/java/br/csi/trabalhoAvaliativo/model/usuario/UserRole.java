@@ -1,9 +1,8 @@
 package br.csi.trabalhoAvaliativo.model.usuario;
 
 public enum UserRole {
-
-    ADMIN("admin"),
-    USER("user");
+    CLIENT("client"),
+    MECHANIC("mechanic");
     private String permissao;
 
     UserRole(String permissao){
