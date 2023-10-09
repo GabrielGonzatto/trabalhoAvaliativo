@@ -8,6 +8,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.nio.file.AccessDeniedException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,6 @@ public class TratadorDeErros {
 
     @ExceptionHandler(SQLException.class)
     public ResponseEntity tratarErro500(Exception e){
-
         return ResponseEntity.internalServerError().body(e.getLocalizedMessage());
     }
 
@@ -40,8 +40,8 @@ public class TratadorDeErros {
             dados.add(new DadosErroValidacao(fe.getField(), fe.getDefaultMessage()));
         }
         return ResponseEntity.badRequest().body(dados);
-        //return ResponseEntity.badRequest().body(erros.stream().map(DadosErroValidacao::new).toList());
     }
+
     private record DadosErroValidacao(String campo, String mensagem){
         public DadosErroValidacao(FieldError erro){
             this(erro.getField(), erro.getDefaultMessage());
