@@ -15,8 +15,7 @@ public interface OrdemServicoDTO {
     String getTipo();
     String getProblema();
     String getStatus();
-    Boolean getBoolean();
     Date getDataEntrada();
-    Mecanico getMecanico();
-    Cliente getCliente();
+    Boolean getBoolean();
+    OrdemEncerrada getData();
 }

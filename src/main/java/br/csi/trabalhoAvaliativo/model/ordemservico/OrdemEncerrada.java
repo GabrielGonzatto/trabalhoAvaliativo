@@ -26,13 +26,12 @@ public class OrdemEncerrada {
 
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "data_saida")
-    private Date data_saida;
+    private Date dataSaida;
     @NumberFormat(pattern = "#,###.##")
     private Double total;
     @OneToMany(mappedBy = "ordemServico")
     private List<Custos> custos;
-    public void calcularTotal(Double total) {
-        setTotal(custos.stream().mapToDouble(Custos::getValor).sum());
+    public void calcularTotal(List<Custos> custos) {
+        this.total = custos.stream().mapToDouble(Custos::getValor).sum();
     }
-
 }

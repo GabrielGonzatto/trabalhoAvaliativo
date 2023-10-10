@@ -4,4 +4,5 @@ public interface MecanicoDTO {
     Long getIdMecanico();
     String getNome();
     String getCpf();
-    String getSalario();}
+    String getSalario();
+}

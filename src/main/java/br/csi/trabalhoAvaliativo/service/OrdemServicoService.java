@@ -1,5 +1,7 @@
 package br.csi.trabalhoAvaliativo.service;
 
+import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemEncerrada;
+import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemEncerradaDTO;
 import br.csi.trabalhoAvaliativo.model.ordemservico.*;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +9,7 @@ import java.util.List;
 
 @Service
 public class OrdemServicoService {
+
 
     public OrdemServicoService(OrdemServicoRepository repository) {
         this.repository = repository;
@@ -26,7 +29,8 @@ public class OrdemServicoService {
     public OrdemServico findById(Long id){
         System.out.println("entrou em find"+id);
 
-        return this.repository.findById(id).get();}
+        return this.repository.findById(id).get();
+    }
 
     public void atualizar(OrdemServico ordemServico){
         System.out.println("entrou em atualizar");
@@ -44,9 +48,12 @@ public class OrdemServicoService {
     public void encerrarOrdem(OrdemServico ordemServico){
         System.out.println("entrou em encerrar");
         OrdemServico o = this.repository.getReferenceById(ordemServico.getId());
+        OrdemEncerrada ordemEncerrada = ordemServico.getOrdemEncerrada();
+        ordemEncerrada.calcularTotal(ordemEncerrada.getCustos());
         o.setAtivo(false);
         o.setMecanico(ordemServico.getMecanico());
-        o.setOrdemEncerrada(new OrdemEncerrada());
+        o.setOrdemEncerrada(ordemServico.getOrdemEncerrada());
+
     }
     public List<OrdemServicoDTO> listarOrdensAtivas(){
         return this.repository.findAllActive();

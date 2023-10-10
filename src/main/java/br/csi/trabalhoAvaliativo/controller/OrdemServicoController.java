@@ -64,6 +64,8 @@ public class OrdemServicoController {
     @GetMapping("/{id}")
     @Transactional
     public OrdemServico findById(@PathVariable Long id){
+
+
         return this.service.findById(id);
     }
 
