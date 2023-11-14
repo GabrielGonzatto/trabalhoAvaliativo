@@ -42,7 +42,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST,"/custos").hasRole("MECHANIC")
                         .requestMatchers(HttpMethod.GET,"/mecanico").hasRole("MECHANIC")
                         .requestMatchers(HttpMethod.POST,"/mecanico").hasRole("MECHANIC")
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();

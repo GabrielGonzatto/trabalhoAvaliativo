@@ -1,7 +1,7 @@
 package br.csi.trabalhoAvaliativo.model.cliente;
 
 
-import br.csi.trabalhoAvaliativo.model.ordemservico.OrdemServico;
+import br.csi.trabalhoAvaliativo.model.ordem_servico.OrdemServico;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -34,9 +34,9 @@ public class Cliente {
     @NotBlank
     private String telefone;
 
-    @OneToMany(mappedBy = "cliente")
+    /*@OneToMany(mappedBy = "cliente")
     @JsonIgnore
-    private List<OrdemServico> ordemServicos;
+    private List<OrdemServico> ordemServicos;*/
 
 
 }

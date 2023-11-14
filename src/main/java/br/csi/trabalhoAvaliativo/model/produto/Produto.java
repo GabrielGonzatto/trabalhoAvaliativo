@@ -1,6 +1,6 @@
-package br.csi.trabalhoAvaliativo.model.produtoCusto;
+package br.csi.trabalhoAvaliativo.model.produto;
 
-import br.csi.trabalhoAvaliativo.model.custos.Custos;
+import br.csi.trabalhoAvaliativo.model.custo.Custo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -9,22 +9,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
-@Table(name = "produto_custo")
+@Table(name = "produto")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class ProdutoCusto {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Produto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
     private String nome;
 
-    @OneToOne(mappedBy = "produtoCusto")
+    @OneToMany(mappedBy = "produto")
     @JsonIgnore
-    private Custos custo;
-
+    private List<Custo> custos;
 }
