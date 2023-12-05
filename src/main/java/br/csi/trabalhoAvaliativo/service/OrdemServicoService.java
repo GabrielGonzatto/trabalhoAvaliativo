@@ -32,6 +32,14 @@ public class OrdemServicoService {
         return this.repository.findAll();
     }
 
+    public List<OrdemServico> listarOrdensServicosAtivas(){
+        return this.repository.listarOrdensServicosAtivas();
+    }
+
+    public List<OrdemServico> listarOrdensServicosDesativadas(){
+        return this.repository.listarOrdensServicosDesativadas();
+    }
+
     public OrdemServico listarOrdemServico(Long id){
         return this.repository.findById(id).get();
     }
@@ -66,6 +74,8 @@ public class OrdemServicoService {
         o.setData_saida(getData());
         o.setAtivo(false);
         o.setStatus("Fechada");
+        o.setMecanico(ordemServico.getMecanico());
+        o.setCliente(ordemServico.getCliente());
 
         for (Custo custo : ordemServico.getCustos()) {
             custo.setOrdemServico(ordemServico);

@@ -1,4 +1,4 @@
-package br.csi.trabalhoAvaliativo.model;
+package br.csi.trabalhoAvaliativo.controller;
 
 import br.csi.trabalhoAvaliativo.infra.security.TokenService;
 import br.csi.trabalhoAvaliativo.model.usuario.DadosUsuario;
@@ -31,6 +31,7 @@ public class AutenticacaoController {
     TokenService tokenService;
     @Autowired
     private UsuarioService usuarioService;
+
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid DadosUsuario dados){
         var usuarioSenha = new UsernamePasswordAuthenticationToken(dados.login(),dados.senha());
@@ -40,6 +41,7 @@ public class AutenticacaoController {
 
         return ResponseEntity.ok(new LoginResponseDTO(token));
     }
+
     @PostMapping
     @Transactional
     public ResponseEntity criar(@RequestBody @Valid Usuario usuario, UriComponentsBuilder uriBuilder){

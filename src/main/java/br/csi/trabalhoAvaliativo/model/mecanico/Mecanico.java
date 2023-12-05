@@ -30,16 +30,12 @@ public class Mecanico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_mecanico")
     private Long idMecanico;
-    @NotBlank
-    private String nome;
-    @Size(max = 14, message = "Cpf com mais de 14 caracteres")
-    private String cpf;
     @NotNull
     private BigDecimal salario;
 
-    /*@OneToMany(mappedBy = "mecanico")
+    @OneToMany(mappedBy = "mecanico")
     @JsonIgnore
-    private List<OrdemServico> ordemServicos;*/
+    private List<OrdemServico> ordemServicos;
 
 
 }

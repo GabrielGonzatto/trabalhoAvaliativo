@@ -35,8 +35,7 @@ public class ClienteService {
 
         Cliente c = this.repository.getReferenceById(Long.valueOf(cliente.getIdCliente()));
 
-        c.setNome(cliente.getNome());
-        c.setCpf(cliente.getCpf());
+
         c.setTelefone(cliente.getTelefone());
     }
 

@@ -21,10 +21,8 @@ public class Custo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @NumberFormat(pattern = "#,###.##")
     private Double valor;
-
     @ManyToOne
     @JoinColumn(name = "id_produto", referencedColumnName = "id")
     private Produto produto;

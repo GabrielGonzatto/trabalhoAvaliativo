@@ -28,10 +28,7 @@ public class ClienteController {
     public ResponseEntity cadastrarCliente(@RequestBody @Valid Cliente cliente, UriComponentsBuilder uriBuilder) {
 
         this.service.cadastrarCliente(cliente);
-        //monta a URI da aplicação dinamicamente
         URI uri = uriBuilder.path("/cliente/{id}").buildAndExpand(cliente.getIdCliente()).toUri();
-        //created(uri) irá colocar no cabeçalho da requisição da resposta
-        // o parâmetro Location com a URI de acesso ao recurso criado
         return ResponseEntity.created(uri).body(cliente);
     }
     @GetMapping

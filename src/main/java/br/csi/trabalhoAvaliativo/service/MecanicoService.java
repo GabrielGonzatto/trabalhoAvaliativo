@@ -34,8 +34,6 @@ public class MecanicoService {
 
         Mecanico m = this.repository.getReferenceById(Long.valueOf(mecanico.getIdMecanico()));
 
-        m.setNome(mecanico.getNome());
-        m.setCpf(mecanico.getCpf());
         m.setSalario(mecanico.getSalario());
     }
 

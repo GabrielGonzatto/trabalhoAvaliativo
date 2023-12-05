@@ -32,6 +32,16 @@ public class OrdemServicoController {
         return ResponseEntity.ok(this.service.listarOrdensServicos());
     }
 
+    @GetMapping("/ativas")
+    public ResponseEntity<List<OrdemServico>> listarOrdensServicosAtivas(){
+        return ResponseEntity.ok(this.service.listarOrdensServicosAtivas());
+    }
+
+    @GetMapping("/desativadas")
+    public ResponseEntity<List<OrdemServico>> listarOrdensServicosDesativadas(){
+        return ResponseEntity.ok(this.service.listarOrdensServicosDesativadas());
+    }
+
     @PostMapping("/cadastrarOrdemServico")
     @org.springframework.transaction.annotation.Transactional
     public ResponseEntity cadastrarOrdemServico(@RequestBody @Valid OrdemServico ordemServico, UriComponentsBuilder uriBuilder){

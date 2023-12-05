@@ -28,6 +28,10 @@ public class Usuario implements UserDetails {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
     private Long idusuario;
+    @NotBlank
+    private String nome;
+    @NotBlank
+    private String cpf;
     @Email(message = "Email Invalido")
     private String login;
     @NotBlank
@@ -44,7 +48,8 @@ public class Usuario implements UserDetails {
     @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (this.permissao == UserRole.MECHANIC) return List.of(new SimpleGrantedAuthority("ROLE_MECHANIC"), new SimpleGrantedAuthority("ROLE_MECHANIC"));
+        if (this.permissao == UserRole.MECHANIC)
+            return List.of(new SimpleGrantedAuthority("ROLE_MECHANIC"), new SimpleGrantedAuthority("ROLE_MECHANIC"));
         else return List.of(new SimpleGrantedAuthority("ROLE_CLIENT"));
     }
     @JsonIgnore

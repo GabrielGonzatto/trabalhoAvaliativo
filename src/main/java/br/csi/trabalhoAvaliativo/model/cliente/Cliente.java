@@ -28,15 +28,11 @@ public class Cliente {
     @Column(name = "id_cliente")
     private Long idCliente;
     @NotBlank
-    private String nome;
-    @Size(max = 14, message = "Cpf com mais de 14 caracteres")
-    private String cpf;
-    @NotBlank
     private String telefone;
 
-    /*@OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente")
     @JsonIgnore
-    private List<OrdemServico> ordemServicos;*/
+    private List<OrdemServico> ordemServicos;
 
 
 }
